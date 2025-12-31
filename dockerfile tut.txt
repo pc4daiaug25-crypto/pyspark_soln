@@ -1,0 +1,12 @@
+FROM httpd
+COPY index.html /usr/local/apache2/htdocs/
+
+FROM nginx
+COPY index.html /usr/share/nginx/html/
+
+FROM ubuntu
+RUN apt update -y
+RUN apt install python3 -y
+RUN mkdir /app
+COPY add.py /app/
+CMD [ "/bin/python3", "app/add.py" ]
