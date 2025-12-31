@@ -1,0 +1,13 @@
+1. Create the topic first using a command like this
+kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic test_topic --create --partitions 6 --replication-factor 1
+
+2. Then create a consumer that can also be a python file of the question(from beginning is optional)
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic test_topic --from-beginning
+
+3. Then launch the producer if necessary(You put messages here if you have to demostrate)
+kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic test_topic
+
+Other Kafka commands
+kafka-topics.sh -- zookeeper 127.0.0.1:2181 -- list (list all the active topics)
+kafka-topics.sh -- zookeeper 127.0.0.1:2181 -- topic second_topic - -describe (describe the topic)
+kafka-topics.sh -- zookeeper 127.0.0.1:2181 -- topic second_topic -- delete (delete the topic)
